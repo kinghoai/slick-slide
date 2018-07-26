@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slick Playground</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+  <style type="text/css">
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+        width: 50%;
+        margin: 100px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+	.slick-next {
+		right: 51%;
+		z-index: 111;
+	}
+	.slick-prev {
+		left: 26%;
+		z-index: 111;
+	}
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    .slick-current {
+    	opacity: 1;
+    }
+/*.slick-track .slick-active:nth-child(even){
+	opacity: 1 !important;
+}*/
+
+/*.slick-prev:before{
+    color: black;
+    display: block;
+    z-index: 4;
+    position: absolute;
+    background-color: hsla(0,0%,100%,.75);
+    height: 100%;
+    top: 0;
+}
+.slick-next:after{
+	width: 646px;
+	content: "";
+    display: block;
+    z-index: 4;
+    position: absolute;
+    background-color: hsla(0,0%,100%,.75);
+    height: 400px;
+    top: 0;
+}*/
+
+	.content-absolute{
+		max-width:  300px;
+		height: 100px;
+		position: absolute;
+		left: 50%;
+		z-index: 99999;
+		top: 100px;
+		background: rgba(255,255,255,0.8);
+		box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+		padding: 30px
+	}
+  </style>
+</head>
+<body>
+	<div class="content-absolute">
+		<div class="slick-for">
+		  <div>
+			Tao là số 1 
+		  </div>
+		  <div>
+			Tao là số 2
+		  </div>
+		  <div>
+			Tao là số 3 
+		  </div>
+		   <div>
+			Tao là số 4 
+		  </div>
+		   <div>
+			Tao là số 5
+		  </div>
+		   <div>
+			Tao là số 6
+		  </div>
+		</div>
+	</div>
+	
+	<div class="slick-center">
+	  <div>
+		<a href="">
+			<img src="https://cdn.lotte.vn/media/resized/catalog/product/6/1/613725_1.jpg">
+		</a>
+	  </div>
+	  <div>
+		<a href="">
+			<img src="https://cdn.lotte.vn/media/resized/catalog/product/6/1/613725_1.jpg">
+		</a>
+	  </div>
+	  <div>
+		<a href="">
+			<img src="https://cdn.lotte.vn/media/resized/catalog/product/6/1/613725_1.jpg">
+		</a>
+	  </div>
+	   <div>
+		<a href="">
+			<img src="https://cdn.lotte.vn/media/resized/catalog/product/6/1/613725_1.jpg">
+		</a>
+	  </div>
+	   <div>
+		<a href="">
+			<img src="https://cdn.lotte.vn/media/resized/catalog/product/6/1/613725_1.jpg">
+		</a>
+	  </div>
+	   <div>
+		<a href="">
+			<img src="https://cdn.lotte.vn/media/resized/catalog/product/6/1/613725_1.jpg">
+		</a>
+	  </div>
+	</div>
+
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+	$('.slick-for').slick({
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  arrows: false,
+	  fade: true,
+	  asNavFor: '.slick-center'
+	});
+      $('.slick-center').slick({
+	  centerPadding: '60px',
+	  slidesToShow: 2.6,
+	  asNavFor: '.slick-for',
+	  responsive: [
+		{
+		  breakpoint: 768,
+		  settings: {
+			arrows: false,
+			centerMode: true,
+			centerPadding: '40px',
+			slidesToShow: 3
+		  }
+		},
+		{
+		  breakpoint: 480,
+		  settings: {
+			arrows: false,
+			centerMode: true,
+			centerPadding: '40px',
+			slidesToShow: 1
+		  }
+		}
+	  ]
+	});
+    });
+</script>
+
+</body>
+</html>
